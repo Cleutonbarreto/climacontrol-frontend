@@ -1,27 +1,31 @@
-# LoginFrontend
+# ClimaControl Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+Frontend da aplicação ClimaControl desenvolvido com Angular para gerenciamento de assistência técnica de climatização.
 
-## Development server
+## Tecnologias
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular
+- TypeScript
+- HTML
+- CSS
 
-## Code scaffolding
+## Funcionalidades
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Login de usuários
+- Cadastro de clientes
+- Cadastro de equipamentos
+- Controle de ordens de serviço
+- Consumo de API REST
+- Interface responsiva
 
-## Build
+## Objetivo
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+O projeto foi desenvolvido para fornecer uma interface moderna e organizada para controle operacional de assistência técnica, permitindo gerenciamento eficiente de clientes, equipamentos e atendimentos.
 
-## Running unit tests
+## Arquitetura
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+O frontend segue uma estrutura modular baseada em componentes e organização por features.
 
-## Running end-to-end tests
+## Status
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Projeto em desenvolvimento.
