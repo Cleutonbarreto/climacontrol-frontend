@@ -1,0 +1,85 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Ordens de Serviço</h2>
+
+    <button class="btn-primary" routerLink="/ordens-servico/novo">
+      + Nova Ordem
+    </button>
+  </div>
+
+  <div class="card">
+
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Cliente</th>
+            <th>Equipamento</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Abertura</th>
+            <th>Fechamento</th>
+            <th>Próx. Manutenção</th>
+            <th class="acoes">Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <!-- vazio -->
+          <tr *ngIf="ordens.length === 0">
+            <td colspan="9" class="empty">
+              Nenhuma ordem cadastrada
+            </td>
+          </tr>
+
+          <!-- lista -->
+          <tr *ngFor="let o of ordens">
+
+            <td>{{ o.id }}</td>
+
+            <td>{{ o.clienteNome || o.clienteId }}</td>
+
+            <td>{{ o.equipamentoDescricao || o.equipamentoId }}</td>
+
+            <td class="descricao">
+              {{ o.descricao }}
+            </td>
+
+            <td>
+              {{ statusLabel[o.status] }}
+            </td>
+
+            <td>{{ formatDateTime(o.dataAbertura) }}</td>
+
+            <td>{{ formatDateTime(o.dataFechamento) }}</td>
+
+            <td>{{ formatDate(o.dataProximaManutencao) }}</td>
+
+            <td class="acoes">
+              <button class="btn-icon editar"
+                      [routerLink]="['/ordens-servico/editar', o.id]">
+                ✏️
+              </button>
+
+              <button class="btn-icon deletar"
+                      (click)="delete(o.id)">
+                🗑️
+              </button>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+
+  <div class="card">
+
+    <h2>Cadastro de Equipamento</h2>
+    <span class="subtitle">Preencha os dados do equipamento</span>
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Tipo</label>
+          <input formControlName="tipo">
+        </div>
+
+        <div class="form-group">
+          <label>Capacidade (BTUs)</label>
+          <input type="number" formControlName="capacidade">
+        </div>
+
+        <div class="form-group">
+          <label>Modelo</label>
+          <input formControlName="modelo">
+        </div>
+
+        <div class="form-group">
+          <label>Marca</label>
+          <input formControlName="marca">
+        </div>
+
+        <div class="form-group full">
+          <label>Cliente ID</label>
+          <input type="number" formControlName="clienteId">
+        </div>
+
+      </div>
+
+      <button class="btn-primary" type="submit">
+        Salvar Equipamento
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

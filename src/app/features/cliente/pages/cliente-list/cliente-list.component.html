@@ -1,0 +1,77 @@
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="title">
+      <h2>Clientes</h2>
+      <span class="subtitle">Gerencie os clientes cadastrados</span>
+    </div>
+
+    <button class="btn-primary" routerLink="/clientes/novo">
+      + Novo Cliente
+    </button>
+  </div>
+
+  <!-- CARD -->
+  <div class="card">
+
+    <!-- FILTRO -->
+    <div class="table-actions">
+      <input
+        type="text"
+        placeholder="Buscar cliente..."
+        [(ngModel)]="filtro"
+      />
+    </div>
+
+    <!-- TABELA -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>CPF / CNPJ</th>
+          <th>Cidade</th>
+          <th>Cep</th>
+          <th>Rua</th>
+          <th>Bairro</th>
+          <th>Estado</th>
+
+          <th class="acoes">Ações</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of clientesFiltrados">
+          <td>{{ c.id }}</td>
+          <td>{{ c.nome }}</td>
+          <td>{{ c.documento }}</td>
+          <td>{{ c.cidade }}</td>
+          <td>{{ c.cep }}</td>
+          <td>{{ c.rua }}</td>
+          <td>{{ c.bairro }}</td>
+          <td>{{ c.estado }}</td>
+
+
+          <td class="acoes">
+            <button class="btn-icon editar" (click)="editar(c.id!)">
+              ✏️
+            </button>
+
+            <button class="btn-icon deletar" (click)="deletar(c.id!)">
+              🗑️
+            </button>
+          </td>
+        </tr>
+
+        <tr *ngIf="clientesFiltrados.length === 0">
+          <td colspan="4" class="empty">
+            Nenhum cliente encontrado
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

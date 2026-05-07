@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h2>Novo Cliente</h2>
+
+  <div class="card">
+    <form (ngSubmit)="salvar()" class="form">
+
+      <div class="grid">
+        <input [(ngModel)]="cliente.nome" name="nome" placeholder="Nome" required />
+        <input [(ngModel)]="cliente.documento" name="documento" placeholder="CPF/CNPJ" required />
+        <input [(ngModel)]="cliente.telefone" name="telefone" placeholder="Telefone" />
+
+        <input [(ngModel)]="cliente.cep" name="rua" placeholder="Cep" />
+        <input [(ngModel)]="cliente.rua" name="rua" placeholder="Rua" />
+        <input [(ngModel)]="cliente.numero" name="numero" placeholder="Número" />
+        <input [(ngModel)]="cliente.bairro" name="bairro" placeholder="Bairro" />
+        <input [(ngModel)]="cliente.cidade" name="cidade" placeholder="Cidade" />
+        <input [(ngModel)]="cliente.estado" name="estado" placeholder="Estado" />
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Salvar</button>
+      </div>
+
+    </form>
+  </div>
+
+</div>

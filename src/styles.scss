@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$green-arrow-primary: mat.define-palette(mat.$green-palette, 900);
+$green-arrow-accent: mat.define-palette(mat.$light-green-palette, A400);
+
+$clima-primary: mat.define-palette(mat.$blue-palette, 600);
+$clima-accent: mat.define-palette(mat.$light-blue-palette, A200);
+
+$clima-theme: mat.define-light-theme((
+  color: (
+    primary: $clima-primary,
+    accent: $clima-accent,
+  )
+));
+
+@include mat.all-component-themes($clima-theme);
+
+/* ===== OVERRIDE GLOBAL (ESSENCIAL) ===== */
+body {
+  background-color: #E2E8F0; // cinza médio (não branco)
+  color: #0F172A;
+}
+
+/* superfície do Material (cards, dialogs, etc) */
+.mat-app-background {
+  background-color: #E2E8F0 !important;
+}
+
+/* cards do Material */
+.mat-mdc-card {
+  background-color: #F1F5F9 !important;
+}
+
+/* tabelas do Material (se usar futuramente) */
+.mat-mdc-table {
+  background: #F8FAFC !important;
+}

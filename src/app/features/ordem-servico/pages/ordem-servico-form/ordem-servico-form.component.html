@@ -1,0 +1,87 @@
+<div class="container">
+
+  <div class="card">
+
+    <h2>Ordem de Serviço</h2>
+    <span class="subtitle">Preencha os dados da ordem</span>
+
+    <form [formGroup]="form" (ngSubmit)="save()">
+
+      <div class="form-grid">
+
+        <!-- CLIENTE -->
+        <div class="form-group">
+          <label>Cliente ID</label>
+          <input type="number" formControlName="clienteId">
+          <small class="error"
+            *ngIf="form.get('clienteId')?.touched && form.get('clienteId')?.invalid">
+            Cliente é obrigatório
+          </small>
+        </div>
+
+        <!-- EQUIPAMENTO -->
+        <div class="form-group">
+          <label>Equipamento ID</label>
+          <input type="number" formControlName="equipamentoId">
+          <small class="error"
+            *ngIf="form.get('equipamentoId')?.touched && form.get('equipamentoId')?.invalid">
+            Equipamento é obrigatório
+          </small>
+        </div>
+
+        <!-- STATUS -->
+        <div class="form-group">
+          <label>Status</label>
+          <select formControlName="status">
+            <option *ngFor="let s of statusList" [value]="s">
+              {{ statusLabel[s] }}
+            </option>
+          </select>
+        </div>
+
+        <!-- DATA ABERTURA -->
+        <div class="form-group">
+          <label>Data de Abertura</label>
+          <input type="datetime-local" formControlName="dataAbertura">
+        </div>
+
+        <!-- DATA FECHAMENTO -->
+        <div class="form-group">
+          <label>Data de Fechamento</label>
+          <input type="datetime-local" formControlName="dataFechamento">
+        </div>
+
+        <!-- PRÓXIMA MANUTENÇÃO -->
+        <div class="form-group">
+          <label>Próxima Manutenção</label>
+          <input type="date" formControlName="dataProximaManutencao">
+        </div>
+
+        <!-- DESCRIÇÃO -->
+        <div class="form-group full">
+          <label>Descrição</label>
+          <textarea formControlName="descricao"></textarea>
+          <small class="error"
+            *ngIf="form.get('descricao')?.touched && form.get('descricao')?.invalid">
+            Descrição é obrigatória
+          </small>
+        </div>
+
+      </div>
+
+      <!-- BOTÕES -->
+      <div class="actions">
+        <button class="btn-primary" type="submit" [disabled]="form.invalid">
+          Salvar
+        </button>
+
+        <button class="btn-secondary" type="button" routerLink="/ordens-servico">
+          Cancelar
+        </button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

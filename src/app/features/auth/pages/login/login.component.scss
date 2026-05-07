@@ -1,0 +1,41 @@
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #1f2933, #111827);
+}
+
+.arrow-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  padding: 2.5rem;
+  width: 380px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.title {
+  color: #e2e8f0;
+  letter-spacing: 1px;
+  margin-bottom: 1.8rem;
+  font-weight: 600;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 1.2rem;
+}
+
+.arrow-button {
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.2s ease-in-out;
+}
+
+.arrow-button:hover {
+  transform: translateY(-1px);
+}

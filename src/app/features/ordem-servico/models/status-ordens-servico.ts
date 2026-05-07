@@ -1,0 +1,6 @@
+export enum StatusOrdemServico {
+  ABERTA = 'ABERTA',
+  ANDAMENTO = 'ANDAMENTO',
+  FINALIZADA = 'FINALIZADA',
+  CANCELADA = 'CANCELADA'
+}

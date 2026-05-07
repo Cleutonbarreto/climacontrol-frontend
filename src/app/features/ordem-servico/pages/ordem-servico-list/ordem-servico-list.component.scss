@@ -1,0 +1,142 @@
+
+/* ===== BASE ===== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #eef4f8;
+  margin: 0;
+  color: #1f2937;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  padding: 20px;
+  max-width: 1300px; /* mais espaço pra tabela */
+  margin: auto;
+}
+
+/* ===== HEADER ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #dbe3ea;
+}
+
+/* ===== BUTTON ===== */
+.btn-primary {
+  background-color: #1e90ff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #187bdb;
+}
+
+/* ===== TABLE WRAPPER ===== */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* ===== TABLE ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1100px; /* essencial para muitas colunas */
+}
+
+/* HEADER */
+th {
+  text-align: left;
+  padding: 12px;
+  background-color: #3fa7f5;
+  color: white;
+  font-weight: 600;
+}
+
+/* CELLS */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* ZEBRA */
+tr:nth-child(even) {
+  background-color: #f7fbff;
+}
+
+/* HOVER */
+tr:hover {
+  background-color: #e0f2fe;
+}
+
+/* ===== DESCRIÇÃO (evita quebrar layout) ===== */
+.descricao {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== ACTIONS ===== */
+.acoes {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.btn-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 15px;
+}
+
+.btn-icon.editar:hover {
+  color: #1e90ff;
+}
+
+.btn-icon.deletar:hover {
+  color: #ef4444;
+}
+
+/* ===== EMPTY ===== */
+.empty {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  table {
+    font-size: 14px;
+  }
+}

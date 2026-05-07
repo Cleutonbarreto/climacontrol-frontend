@@ -1,0 +1,64 @@
+<div class="container">
+
+  <div class="header">
+    <h2>Equipamentos</h2>
+
+    <button class="btn-primary" routerLink="/equipamentos/novo">
+      + Novo Equipamento
+    </button>
+  </div>
+
+  <div class="card">
+
+    <div class="table-wrapper">
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Tipo</th>
+            <th>Capacidade</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Cliente</th>
+            <th class="acoes">Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngIf="equipamentos.length === 0">
+            <td colspan="7" class="empty">
+              Nenhum equipamento cadastrado
+            </td>
+          </tr>
+
+          <tr *ngFor="let e of equipamentos">
+            <td>{{ e.id }}</td>
+            <td>{{ e.tipo }}</td>
+            <td>{{ e.capacidade || '-' }}</td>
+            <td>{{ e.modelo || '-' }}</td>
+            <td>{{ e.marca || '-' }}</td>
+            <td>{{ e.clienteNome || e.clienteId }}</td>
+
+            <td class="acoes">
+              <button class="btn-icon editar"
+                      [routerLink]="['/equipamentos/editar', e.id]">
+                ✏️
+              </button>
+
+              <button class="btn-icon deletar"
+                      (click)="delete(e.id)">
+                🗑️
+              </button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
