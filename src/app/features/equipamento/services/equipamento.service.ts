@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EquipamentoResponse } from '../models/equipamento-response.model.js';
 import { EquipamentoRequest } from '../models/equipamento-request.model.js';
+import { environment } from '../../../../environments/environment.js';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { EquipamentoRequest } from '../models/equipamento-request.model.js';
 export class EquipamentoService {
 
   private http = inject(HttpClient);
-  private API = 'http://localhost:8080/equipamentos';
+  private API = `${environment.apiUrl}/equipamentos`;
 
   findAll(): Observable<EquipamentoResponse[]> {
     return this.http.get<EquipamentoResponse[]>(this.API);

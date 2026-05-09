@@ -3,13 +3,14 @@ import { OrdemServicoResponse } from '../models/ordens-servico-response';
 import { Observable } from 'rxjs';
 import { OrdemServicoRequest } from '../models/ordens-servico-request';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdemServicoService {
  private http = inject(HttpClient);
-  private API = 'http://localhost:8080/ordens-servico';
+  private API = `${environment.apiUrl}/ordens-servico`;
 
   findAll(): Observable<OrdemServicoResponse[]> {
     return this.http.get<OrdemServicoResponse[]>(this.API);

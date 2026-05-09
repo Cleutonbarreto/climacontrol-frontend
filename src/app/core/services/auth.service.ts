@@ -13,7 +13,7 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  private API = `${environment.apiUrl}/auth`;
+  private API = `${environment.apiUrl}`;
 
   login(email: string, senha: string): Observable<any> {
     return this.http.post<any>(`${this.API}/login`, { email, senha })
