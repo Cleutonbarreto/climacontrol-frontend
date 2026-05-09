@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, tap } from 'rxjs';
 import { User } from '../../features/auth/models/user.models';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
 
-  private API = 'http://localhost:8080/auth';
+  private API = `${environment.apiUrl}/auth`;
 
   login(email: string, senha: string): Observable<any> {
     return this.http.post<any>(`${this.API}/login`, { email, senha })
